@@ -134,6 +134,23 @@
 
       <!-- (3) Filter Messages -->
       <div class="devtools-group">
+        <h3>Filter Messages</h3>
+        <p class="devtools-note">
+          Click "Populate Filters" to write one of each message type to the console, 
+          then use the DevTools filter bar to practice each filter technique. 
+        </p>
+
+        <div class="devtools-buttons">
+          <button class="dev-btn" onclick="demoFilterMessages()">Populate Filters</button>
+        </div> 
+
+        <ul class="filter-guide">
+          <li><strong>Filter by Log Level:</strong> Use <code>Default levels</code> dropdown in Console toolbar.</li>
+          <li><strong>Filter by Text:</strong> Type <code>GigaPet</code> in the filter bar to only show messages containing that text.</li>
+          <li><strong>Filter by Regular Expression:</strong> Type <code>/weight|happiness/i</code> in the filter bar to only show messages containing those terms.</li>
+          <li><strong>Filter by Message Source:</strong> Select a <code>File Name</code> in the <code>Messages</code> dropdown in the sidebar to filter by its source.</li>
+          <li><strong>Filter by User Messages:</strong> Select <code>User Messages</code> from sidebar to filter by User Messages.</li>
+        </ul>
       
       </div>
 

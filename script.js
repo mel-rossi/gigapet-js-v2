@@ -294,9 +294,9 @@ function showNotification(message, reactiveSprite = null, priority = 0) {
 
 // Startup logs 
 function runStarupLogs() {
-  console.log("%cWelcome to Gigapet JS!", "color: green; font-size: 16px; font-weight: bold;");
-  console.log("%cThis is a simple virtual pet game built with JavaScript and jQuery.", "color: lightblue;");
-  console.log("%cInteract with your pet using the buttons and watch its stats change!", "color: lavender;");
+  console.log("%cWelcome to Gigapet JS!", "color: #a6e3a1; font-size: 18px; font-weight: bold;");
+  console.log("%cThis is a simple virtual pet game built with JavaScript and jQuery.", "color: #89b4fa; font-size: 14px;");
+  console.log("%cInteract with your pet using the buttons and watch its stats change!", "color: #cba6f7; font-size: 14px;");
 }
 
 // 1 Message Logging 
@@ -408,4 +408,15 @@ function demoViolation() {
     }
     console.log("GigaPet [Violation Demo] - Blocking loop finished.");
   }, 0);
+}
+
+// 3 Filter Messages 
+function demoFilterMessages() {
+  // Log level - one message for each level filter 
+  console.log("GigaPet [Filter Demo] Log - Pet Name: " + pet_info.name);
+  console.info("GigaPet [Filter Demo] Info - Pet Age: " + pet_info.age);
+  console.warn("GigaPet [Filter Demo] Warn - Pet Weight: " + pet_info.weight);
+  console.error("GigaPet [Filter Demo] Error - Pet Happiness: " + pet_info.happiness);
+
+  console.log("GigaPet [Filter Demo] - Use the filter options in DevTools to show/hide specific log levels and test filtering! (Follow Filter Guide in DevTools Demo Panel if needed)");
 }
