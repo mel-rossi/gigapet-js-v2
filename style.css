@@ -293,7 +293,7 @@ vtools-buttons {
   color: #89b4fa;
 }
 
-/* Warning-style DevTools button (for error/404 demos) */
+/* Warning-style DevTools Buttons (for error/404 demos) */
 .dev-btn--warn {
   border-color: #f38ba8;
   color: #f38ba8;
@@ -305,3 +305,22 @@ vtools-buttons {
   color: #fab387;
 }
 
+/* Filter Guide */
+.filter-guide {
+  color: #a6adc8;
+  font-size: 0.82rem;
+  padding-left: 1.2rem;
+  margin: 0.4rem 0 0 0;
+}
+ 
+.filter-guide li {
+  margin-bottom: 0.4rem;
+}
+ 
+.filter-guide code {
+  background-color: #313244;
+  color: #a6e3a1;
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.82rem;
+}
