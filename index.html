@@ -135,6 +135,7 @@
       <!-- (3) Filter Messages -->
       <div class="devtools-group">
         <h3>Filter Messages</h3>
+
         <p class="devtools-note">
           Click "Populate Filters" to write one of each message type to the console, 
           then use the DevTools filter bar to practice each filter technique. 
@@ -156,7 +157,19 @@
 
       <!-- (4) Reproduce a Bug & (9) Apply Fix -->
       <div class="devtools-group">
-      
+        <h3>Reproduce a Bug & Apply a Fix</h3>
+
+        <p class="devtools-note">
+          Click "Reproduce Bug" to trigger a bug in the console. 
+          Watch from the console and click "Apply Fix" to fix the bug.
+        </p>
+
+        <div class="devtools-buttons">
+          <button class="dev-btn dev-btn--warn" onclick="demoReproduceBug()">Reproduce Bug</button>
+          <button class="dev-btn" onclick="demoApplyFix()">Apply Fix</button>
+        </div>
+
+        <p class="devtools-result" id="bug-result"></p>
       </div>
 
       <!-- (5) Sources, (6, 7) Breakpoints & (8) Check Variables -->

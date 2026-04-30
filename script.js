@@ -413,10 +413,47 @@ function demoViolation() {
 // 3 Filter Messages 
 function demoFilterMessages() {
   // Log level - one message for each level filter 
-  console.log("GigaPet [Filter Demo] Log - Pet Name: " + pet_info.name);
-  console.info("GigaPet [Filter Demo] Info - Pet Age: " + pet_info.age);
+  console.log("GigaPet [Filter Demo] Log - Pet Name: " + pet_info.name); 
+  console.info("GigaPet [Filter Demo] Info - Pet Age: " + pet_info.age); 
   console.warn("GigaPet [Filter Demo] Warn - Pet Weight: " + pet_info.weight);
   console.error("GigaPet [Filter Demo] Error - Pet Happiness: " + pet_info.happiness);
 
   console.log("GigaPet [Filter Demo] - Use the filter options in DevTools to show/hide specific log levels and test filtering! (Follow Filter Guide in DevTools Demo Panel if needed)");
 }
+
+// 4 Reproduce a Bug
+var useFixedVersion = false; 
+
+// Bug Helper function
+function buggedAddition(a, b) {
+  // Add happiness using string concatenation instead of numeric addition to simulate a common JavaScript bug
+  return a + b; // # + "#" = ## instead of addition of # + #
+}
+
+// Fixed Helper function 
+function fixedAddition(a, b) { 
+  // Correctly add happiness using numeric addition
+  return parseInt(a) + parseInt(b); // Convert inputs to integers before adding to ensure correct addition
+}
+
+// Bug Reproduction Function
+function demoReproduceBug() {
+  // Simulate the bug by trying to increase happiness using the buggy addition function
+  var currentHappiness = pet_info.happiness;
+  var addedAmount = "3"; // Add a string "3" instead of a number 3 to simulate the bug
+ 
+  var result = buggedAddition(currentHappiness, addedAmount);
+ 
+  console.group("GigaPet [Reproduce Bug] — String Concatenation instead of Addition");
+    console.log("currentHappiness (number):", currentHappiness);
+    console.log("addedAmount (string):", addedAmount);
+    console.warn("Result of Bugged Addition:", result, "( Expected:", currentHappiness + 3, ") - Concatenation occurred instead of addition!");
+  console.groupEnd();
+ 
+  document.getElementById("bug-result").textContent =
+    "Bug result: " + currentHappiness + " + '3' = \"" + result + "\"  (should be " + (currentHappiness + 3) + ")";
+}
+
+// 5 Get Familiar with the Sources UI
+
+// 9 Apply a Fix
