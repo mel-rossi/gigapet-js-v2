@@ -271,7 +271,7 @@ function showNotification(message, reactiveSprite = null, priority = 0) {
   var $note = $('.notification'); 
   $note.stop(true, true);
 
-  $('button').prop('disabled', true); 
+  $('.button-container button').prop('disabled', true); 
 
   // Temporary Sprite Change for Actions
   if (reactiveSprite) { 
@@ -295,15 +295,81 @@ function showNotification(message, reactiveSprite = null, priority = 0) {
 // Startup logs 
 function runStarupLogs() {
   console.log("%cWelcome to Gigapet JS!", "color: green; font-size: 16px; font-weight: bold;");
-  console.log("%cThis is a simple virtual pet game built with JavaScript and jQuery.", "color: blue;");
-  console.log("%cInteract with your pet using the buttons and watch its stats change!", "color: purple;");
+  console.log("%cThis is a simple virtual pet game built with JavaScript and jQuery.", "color: lightblue;");
+  console.log("%cInteract with your pet using the buttons and watch its stats change!", "color: lavender;");
 }
 
 // 1 Message Logging 
 
 // 1.1 Log Info
 function demoLogInfo() { 
-  console.log("GigaPet [Info] - Current Pet Info:", pet_info);
+  // console.info() outputs a message to the console at the "info" log level
+  // In this case it reports the pet's current stats at time of button click
+  console.info("GigaPet [Info] - Current Pet Info:", pet_info);
 }
 
 // 1.2 Log Warning
+function demoLogWarning() { 
+  // console.warn() outputs a warning message to the console at the "warning" log level
+  // In this case it warns the user when they aproach (2 or 8) a stat limit (0 or 10)
+  if (pet_info.weight <= 2) {
+    console.warn("GigaPet [Warning] - Your pet has low weight! Please feed it some treats.");
+  }
+  if (pet_info.weight >= 8) {
+    console.warn("GigaPet [Warning] - Your pet is overfed! Try playing or exercising to reduce weight.");
+  }
+  if (pet_info.happiness <= 2) {
+    console.warn("GigaPet [Warning] - Your pet is unhappy! Try playing or giving it some treats to increase happiness.");
+  }
+  if (pet_info.style <= 2) {
+    console.warn("GigaPet [Warning] - Your pet has low style! Try giving it some drip to increase style.");
+  } 
+}
+
+// 1.3 Log Error
+function demoLogError() { 
+  // console.error() outputs an error message to the console at the "error" log level
+  // In this case it simulates an error when trying to click a disabled button (stat limit reached)
+  if (pet_info.weight === 0 && $('.play-button').prop('disabled')) {
+    console.error("GigaPet [Error] - You cannot play nor exercise with your pet because it is starving! Please feed it some treats first.");
+  }
+  if (pet_info.weight === 10 && $('.treat-button').prop('disabled')) {
+    console.error("GigaPet [Error] - You cannot feed your pet more treats because it is overfed! Try playing or exercising to reduce weight.");
+  }
+  if (pet_info.happiness === 0 && $('.exercise-button').prop('disabled')) {
+    console.error("GigaPet [Error] - You cannot exercise with your pet because it is very unhappy! Try giving it some treats to increase happiness first.");
+  }
+  if (pet_info.style === 0 && $('.play-button').prop('disabled')) {
+    console.error("GigaPet [Error] - You cannot give a treat, play nor exercise with your pet because it has no style! Try giving it some drip to increase style first.");
+  }
+  if (pet_info.style === 10 && $('.drip-button').prop('disabled')) {
+    console.error("GigaPet [Error] - You cannot give your pet more drip because it is already a Drip Master! Try giving it some treats, playing, or making it exercise instead.");
+  }
+} 
+
+// 1.4 Log Table 
+function demoLogTable() {
+  // console.table() displays tabular data as a table
+  // In this case it shows the pet's stats in a clear table format for easy reading
+  console.table(pet_info);
+}
+
+// 1.5 Log Group 
+function demoLogGroup() {
+  // console.group() creates a new inline group in the console log, allowing you to group related messages together
+  // In this case it groups the Pet Info Table with any relevant warnings and errors
+  console.group("GigaPet [Group] - Full Report");
+    demoLogWarning();
+    demoLogError();
+    demoLogTable();
+  console.groupEnd();
+}
+
+// 1.6 Log Custom 
+function demoLogCustom() {
+  // console.log() with CSS styling allows you to create custom styled log messages
+  // In this case it creates a fun custom log message when the pet reaches max happiness
+  if (pet_info.happiness === 10) {
+    console.log("%cGigaPet [Custom Log] - Your pet is at maximum happiness! Keep up the good work!", "color: Red; font-weight: bold;");
+  }
+}
