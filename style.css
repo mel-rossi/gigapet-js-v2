@@ -240,3 +240,55 @@ footer a {
   font-family: 'Courier New', Courier, monospace;
   border: 10px solid Maroon;
 }
+
+.devtools-panel h2 {
+  color: #cba6f7;
+  font-size: 1.4rem;
+  margin-bottom: 0.4rem;
+}
+
+.devtools-intro {
+  color: #a6e3a1;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.devtools-group {
+  background-color: Black;
+  border: 1px solid Gray;
+  border-radius: 10px;
+  padding: 1.2rem 1.5rem;
+  margin-bottom: 1.2rem;
+}
+ 
+.devtools-group h3 {
+  color: #89b4fa;
+  margin: 0 0 0.7rem 0;
+  font-size: 1rem;
+}
+
+vtools-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 0.6rem;
+}
+ 
+/* Default DevTools button */
+.dev-btn {
+  background-color: #313244;
+  color: #cdd6f4;
+  border: 1px solid #45475a;
+  border-radius: 6px;
+  padding: 0.45rem 1rem;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background-color 0.15s, border-color 0.15s;
+}
+ 
+.dev-btn:hover {
+  background-color: #45475a;
+  border-color: #89b4fa;
+  color: #89b4fa;
+}
