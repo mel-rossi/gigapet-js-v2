@@ -373,3 +373,39 @@ function demoLogCustom() {
     console.log("%cGigaPet [Custom Log] - Your pet is at maximum happiness! Keep up the good work!", "color: Red; font-weight: bold;");
   }
 }
+
+// 2 View Messages Loggged by the Browser 
+
+// 2.1 Cause 404 Network Error 
+function demoCause404() {
+  // This function simulates a network error by trying to load a non-existent image
+  // The browser will log a 404 error in the console (in the "Network" tab of DevTools)
+  console.log("GigaPet [Network Error Demo] - Attempting to load a non-existent image to trigger a 404 error (Network tab)...");
+  var img = new Image();
+  img.src = "assets/non_existent_image.png"; // This image does not exist (404 error)
+  document.body.appendChild(img);
+  img.style.display = "none"; // Hide the broken image icon on the page
+}
+
+// 2.2 Cause TypeError
+function demoTypeError() {
+  // This function simulates a TypeError by trying to call a method on undefined 
+  // The browser will log a TypeError in the console when this function is called
+  console.log("GigaPet [TypeError Demo] - Attempting to call .toUpperCase() on undefined to trigger a TypeError...");
+  undefined.toUpperCase(); // This will cause a TypeError because undefinedVariable is not an object
+}
+
+// 2.3 Cause Violation 
+function demoViolation() {
+  // This function simulates a violation by running a long loop on the main thread
+  // The browser will log a violation in the console (in the "Performance" tab of DevTools) if it takes too long
+  console.log("GigaPet [Performance Violation Demo] - Running a long loop to simulate a performance violation (Performance tab)...");
+  setTimeout(function() {
+    // 200 ms loop to block the main thread and trigger a performance violation warning in DevTools
+    var start = Date.now();
+    while (Date.now() - start < 200) {
+      // Busy wait for 200 ms
+    }
+    console.log("GigaPet [Violation Demo] - Blocking loop finished.");
+  }, 0);
+}

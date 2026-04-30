@@ -292,3 +292,16 @@ vtools-buttons {
   border-color: #89b4fa;
   color: #89b4fa;
 }
+
+/* Warning-style DevTools button (for error/404 demos) */
+.dev-btn--warn {
+  border-color: #f38ba8;
+  color: #f38ba8;
+}
+ 
+.dev-btn--warn:hover {
+  background-color: #45475a;
+  border-color: #fab387;
+  color: #fab387;
+}
+
