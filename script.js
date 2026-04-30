@@ -8,6 +8,9 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
   $('.play-button').click(clickedPlayButton);
   $('.exercise-button').click(clickedExerciseButton);
   $('.drip-button').click(clickedDripButton);
+
+  // Run startup logs in Chrome DevTools
+  runStarupLogs();
 })
 
 // Pet Info Object
@@ -286,3 +289,21 @@ function showNotification(message, reactiveSprite = null, priority = 0) {
       updateButtonStates();
     });
 }
+
+// Chrome DevTools Demo Logs
+
+// Startup logs 
+function runStarupLogs() {
+  console.log("%cWelcome to Gigapet JS!", "color: green; font-size: 16px; font-weight: bold;");
+  console.log("%cThis is a simple virtual pet game built with JavaScript and jQuery.", "color: blue;");
+  console.log("%cInteract with your pet using the buttons and watch its stats change!", "color: purple;");
+}
+
+// 1 Message Logging 
+
+// 1.1 Log Info
+function demoLogInfo() { 
+  console.log("GigaPet [Info] - Current Pet Info:", pet_info);
+}
+
+// 1.2 Log Warning

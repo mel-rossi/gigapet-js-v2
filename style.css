@@ -228,3 +228,15 @@ footer a {
   cursor: not-allowed;
   filter: grayscale(100%); 
 }
+
+
+/* DevTools Demo Panel Styles */
+
+.devtools-panel { 
+  background-color: Black;
+  color: WhiteSmoke; 
+  padding: 2rem 3rem; 
+  margin: 0; 
+  font-family: 'Courier New', Courier, monospace;
+  border: 10px solid Maroon;
+}
