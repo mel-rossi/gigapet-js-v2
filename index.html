@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <!-- Tab Title and Meta Tags -->
+    <title>GigaPet (JS Edition)</title>
+
+    <meta name="description" content="A cool thing made with Glitch">
+    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Load Scripts and Styles -->
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"
+            integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="
+            crossorigin="anonymous"></script>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <!-- Site Header -->
+    <header role="banner" class="site-header">
+      <h1>GigaPet JavaScript Edition</h1>
+
+      <a href="https://github.com/mel-rossi/gigapet-js">&#x24D8; Source Code</a>
+    </header>
+
+    <!-- Site Main Content -->
+    <main role="main">
+
+      <article class="pet-menu">
+
+        <!-- Pet Sprite -->
+        <section class="pet-image-container">
+          <img class="pet-image" src="assets/Default.jpg">
+
+          <!-- Visual notification -->
+          <div class="bubble notification"></div>
+        </section>
+
+        <!-- Dashboard -->
+        <section class="dashboard">
+
+          <!-- Pet Name -->
+          <h2 class="name-box">
+            <span class="name"></span>
+          </h2>
+
+          <!-- Pet Stats -->
+          <div class="stat-box weight-box"> 
+            <div class="stat-label">Weight</div>
+
+            <div class="meter-bar">
+              <span class="meter-value"><span class="weight"></span> / 10</span>
+              <div class="meter-fill weight-fill"></div>
+            </div>
+          </div>
+
+          <div class="stat-box happiness-box">
+            <div class="stat-label">Happiness</div>
+
+            <div class="meter-bar">
+              <span class="meter-value"><span class="happiness"></span> / 10</span>
+              <div class="meter-fill happiness-fill"></div>
+            </div>
+          </div>
+
+          <div class="stat-box style-box">
+            <div class="stat-label">Style</div>
+
+            <div class="meter-bar">
+              <span class="meter-value"><span class="style"></span> / 10</span>
+              <div class="meter-fill style-fill"></div>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="button-container">
+
+            <button class="treat-button">Treat</button>
+
+            <button class="play-button">Play</button>
+
+            <button class="exercise-button">Exercise</button>
+
+            <button class="drip-button">Drip</button>
+
+          </div>
+        </section>
+
+      </article>
+
+    </main>
+
+    <!-- Site Footer -->
+    <footer role="contentinfo", class="site-footer"> 
+      <pre>Copyright © 2026 Mel Rossi Rodrigues. All rights reserved.</pre>
+    </footer>
+    
+  </body>
+
+</html>

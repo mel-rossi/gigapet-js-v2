@@ -1,0 +1,230 @@
+/* Global Styles */ 
+* {
+  box-sizing: border-box;
+}
+
+html, body { 
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  font-family: Verdana, Geneva, sans-serif;
+
+  color: Black;
+  background-color: WhiteSmoke; 
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+  
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+  
+header, footer {
+  color: WhiteSmoke;
+  background-color: Maroon;
+
+  text-align: center;
+  padding: 10px;
+}
+
+a { 
+  color: inherit;
+
+  border: .1vw solid WhiteSmoke;
+  text-decoration: none;
+  padding: .3vw;
+  border-radius: .5vw;
+}
+
+.site-header { 
+  margin-bottom: 10px;
+}
+
+.site-footer { 
+  margin-top: 10px;
+}
+  
+.bold {
+  font-weight: bold;
+}
+  
+  
+li {
+  margin-bottom: 5px;
+}
+  
+footer a {
+  float: left;
+  margin: 5px;
+}
+
+/* Main Content */ 
+.pet-menu { 
+  position: relative;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  padding: 5vw;
+  width: 80vw; 
+  
+
+  /* background-color: bisque; */
+  border-radius: 20px;
+}
+
+/* Sprite */ 
+.pet-image-container {
+  position: relative;
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  overflow: visible;
+}
+
+.pet-image {
+  position: absolute;
+  top: calc(20px + 3vw); /* Align up to bottom of name box */
+  left: 25%;
+  transform: translateX(-50%);
+  width: 25vw;
+  height: auto;
+  max-width: 100%;
+  border-radius: 50%;
+}
+
+
+.pet-image.shiny {
+  box-shadow:
+    0 0 1vw 0.4vw gold,
+    0 0 2vw 1vw rgba(255, 215, 0, 0.8),
+    0 0 3vw 1.5vw rgba(255, 255, 0, 0.6),
+    0 0 4vw 2vw rgba(255, 255, 0, 0.4);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+/* Conditional Message */
+.bubble {
+  display: none;
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.75);
+  border: 2px solid #ccc;
+  border-radius: 16px;
+  padding: 8px 14px;
+  font-size: 1vw;
+  font-weight: bold;
+  text-align: center;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+
+  width: 240px;
+}
+
+/* Dashboard (Name, Stats, Action Buttons) */ 
+.dashboard {
+  padding: 20px;
+  text-align: center;
+}
+
+.dashboard div {
+  display: flex;
+}
+
+/* Name */
+.name-box { 
+  font-size: 3vw;
+  font-style: oblique;
+  color: Black;
+  text-shadow: 2px 2px 0px WhiteSmoke; 
+
+  border: 1px dotted Black;
+  border-width: .2vw .4vw;
+  border-radius: 1vw;
+  background-image: linear-gradient(to top, Wheat, Cornsilk);
+}
+
+/* Stats */
+.stat-box { 
+  display: grid;
+  grid-template-columns: auto auto;
+  padding: 10px;
+  width: 100%;
+}
+
+.stat-label { 
+  font-size: 1.4vw; 
+  margin-bottom: 0.4vw;
+  width: 100%;
+
+  white-space: nowrap;
+  font-weight: bold;
+}
+
+.meter-bar { 
+  position: relative;
+  width: 30vw;
+  height: 2vw;
+  background-color: DarkGrey;
+  border-radius: 2vw;
+  overflow: hidden;
+  border: .1vw solid DimGray;
+}
+
+.meter-value { 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1vw;
+  font-weight: bold;
+}
+
+.meter-fill { 
+  height: 100%;
+  width: 0%;
+  border-radius: 2vw;
+  transition: width 0.5s ease-in-out;
+
+  background-color: blue; /* Default color, will be overridden by specific fills */
+}
+
+/* Action Buttons */
+.button-container {
+  margin-top: 3vw;
+
+  display: flex;
+  justify-content: center; 
+  gap: 1vw;
+}
+  
+.button-container button {
+  width: 8vw;
+  height: 4vw;
+  margin-right: 1vw;
+  font-size: 1.8vw;
+
+  text-align: center;
+  cursor: pointer;
+  border: dashed;
+  border-radius: 2vw;
+  border-width: .1vw .4vw;
+  
+  color: WhiteSmoke;
+  background-image: linear-gradient(to bottom, Burlywood, RosyBrown);
+  border-color: Black;
+}
+
+.disabled-btn { 
+  opacity: 0.4; 
+  cursor: not-allowed;
+  filter: grayscale(100%); 
+}
