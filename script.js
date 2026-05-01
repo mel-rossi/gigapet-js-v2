@@ -454,7 +454,7 @@ function demoReproduceBug() {
     "Bug result: " + currentHappiness + " + '3' = \"" + result + "\"  (should be " + (currentHappiness + 3) + ")";
 }
 
-// 6 Pause the code with a breakpoint 
+// 7 Set a line-of-code Breakpoint
 function demoBreakpoint() {
   console.log("GigaPet [Breakpoint Demo] - Pausing code execution with a breakpoint.");
 

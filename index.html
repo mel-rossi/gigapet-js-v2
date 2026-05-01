@@ -178,16 +178,20 @@
 
         <p class="devtools-note">
           Open the <code>Sources</code> panel. <br><br>
+          
           The Sources panel is divided into three main sections: 
             the Page tab with the file tree on the left, 
             the Code Editor on the right (or middle), 
             and the Debugger below the other two (or to the rightmost of them). <br>  <br>
-          Check the Event Listener Breakpoints > Mouse > click & Click "Pause on Breakpoint" to pause execution when a click event is triggered.
+
+          Check the <code>Event Listener Breakpoints > Mouse > click</code> to pause execution when a click event is triggered. (Click on any button) <br><br>
+
+          Click on "Pause on Breakpoint" to trigger a line-of-code breakpoint.
+          
         </p>
 
         <div class="devtools-buttons">
           <button class="dev-btn dev-btn--warn" onclick="demoBreakpoint()">Pause on Breakpoint</button>
-          <button class="dev-btn" onclick="demoLineBreak()">Set Line-of-code Breakpoint</button>
         </div>
 
         <p class="devtools-result" id="debug-result"></p>
