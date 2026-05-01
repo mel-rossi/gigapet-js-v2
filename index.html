@@ -24,8 +24,9 @@
     <!-- Site Header -->
     <header role="banner" class="site-header">
       <h1>GigaPet JavaScript Edition</h1>
+      <p>Version 2.0 with DevTools Integration</p>
 
-      <a href="https://github.com/mel-rossi/gigapet-js">&#x24D8; Source Code</a>
+      <a href="https://github.com/mel-rossi/gigapet-js-v2">&#x24D8; Source Code</a>
     </header>
 
     <!-- Site Main Content -->
@@ -98,7 +99,6 @@
     <!-- DevTools Demo Panel -->
 
     <section class="devtools-panel">
-      
       <h2>DevTools Demo Panel</h2>
       
       <p class="devtools-intro">
@@ -108,6 +108,16 @@
       <!-- (1) Message Logging -->
       <div class="devtools-group">
         <h3>Message Logging</h3>
+
+        <div class="devtools-note">
+          Click the buttons below to log different types of messages to the console. <br> <br>
+
+          Log Warning button will only log when stats are near limits (<= 2 or >= 8) <br> 
+          Log Error button will only log when stats are at limits (0 or 10) <br> <br>
+
+          (Note: Happiness = 10 is not considered a limit despite being a max.)
+          <br> <br>
+        </div>
 
         <div class="devtools-buttons"> 
           <button class="dev-btn" onclick="demoLogInfo()">Log Info</button>
@@ -123,6 +133,10 @@
       <!-- (2) Browser Messages -->
       <div class="devtools-group">
         <h3>View Messages Logged by the Browser</h3>
+
+        <div class="devtools-note">
+          Click the buttons below to trigger different types of browser logged messages on the console. <br> <br>
+        </div>
 
         <div class="devtools-buttons">
           <button class="dev-btn dev-btn--warn" onclick="demoCause404()">Cause 404 Error</button>
@@ -179,7 +193,7 @@
         <p class="devtools-note">
           Open the <code>Sources</code> panel. <br><br>
           
-          The Sources panel is divided into three main sections: 
+          The <code>Sources</code> panel is divided into three main sections: 
             the Page tab with the file tree on the left, 
             the Code Editor on the right (or middle), 
             and the Debugger below the other two (or to the rightmost of them). <br>  <br>
@@ -194,10 +208,10 @@
           <button class="dev-btn dev-btn--warn" onclick="demoBreakpoint()">Pause on Breakpoint</button>
         </div>
 
-        <p class="devtools-note">
+        <p class="check-guide">
           While Paused, check the <code>Scope</code> section in the Debugger to inspect variables and their values at that moment in time. <br><br>
           
-          Change to the <code>Watch</code> section and try entering <code>pet_info</code> to watch the pet's stats! 
+          Change to the <code>Watch</code> section and try adding <code>pet_info</code> to watch the pet's stats! 
           (You can click on action buttons when it's no longer paused to change the pet's stats and refresh the Watch panel to see the updated stats) <br><br>
 
           Change back to the <code>Console</code> section to check the console log while paused.

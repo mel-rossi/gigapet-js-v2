@@ -33,6 +33,11 @@ header, footer {
   padding: 10px;
 }
 
+header p { 
+  font-weight: bold;
+  font-size: 1.2vw;
+}
+
 a { 
   color: inherit;
 
@@ -267,7 +272,7 @@ footer a {
   font-size: 1rem;
 }
 
-vtools-buttons {
+.devtools-buttons {
   display: flex;
   flex-wrap: wrap;
   gap: 0.6rem;
@@ -320,7 +325,41 @@ vtools-buttons {
 .filter-guide code {
   background-color: #313244;
   color: #a6e3a1;
+  font-size: 0.82rem;
+}
+
+/* Bug/fix result display */
+.devtools-result {
+  color: #f9e2af;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+/* Check Guide */
+.check-guide {
+  color: #c8a6a6;
+  font-size: 0.82rem;
+  padding-left: 1.2rem;
+  margin: 0.4rem 0 0 0;
+}
+
+.check-guide code { 
+  background-color: #313244;
+  color: #e0e3a1;
+  font-size: 0.82rem;
+}
+
+.devtools-note {
+  font-size: 0.9rem;
+}
+
+.devtools-note code { 
+  background-color: #313244;
+  color: #cba6f7;
+  font-size: 0.82rem;
+}
+
+code { 
   padding: 0.1rem 0.4rem;
   border-radius: 4px;
-  font-size: 0.82rem;
 }

@@ -294,6 +294,9 @@ function showNotification(message, reactiveSprite = null, priority = 0) {
 
 // Startup logs 
 function runStarupLogs() {
+
+  console.clear(); // Clear console on startup for a clean demo experience
+
   console.log("%cWelcome to Gigapet JS!", "color: #a6e3a1; font-size: 18px; font-weight: bold;");
   console.log("%cThis is a simple virtual pet game built with JavaScript and jQuery.", "color: #89b4fa; font-size: 14px;");
   console.log("%cInteract with your pet using the buttons and watch its stats change!", "color: #cba6f7; font-size: 14px;");
@@ -303,6 +306,9 @@ function runStarupLogs() {
 
 // 1.1 Log Info
 function demoLogInfo() { 
+  
+  console.log("GigaPet [Info Demo] - Logging pet info to the console...");
+
   // console.info() outputs a message to the console at the "info" log level
   // In this case it reports the pet's current stats at time of button click
   console.info("GigaPet [Info] - Current Pet Info:", pet_info);
@@ -310,6 +316,9 @@ function demoLogInfo() {
 
 // 1.2 Log Warning
 function demoLogWarning() { 
+
+  console.log("GigaPet [Warning Demo] - Logging warnings when stats are near limits to alert the user...");
+
   // console.warn() outputs a warning message to the console at the "warning" log level
   // In this case it warns the user when they aproach (2 or 8) a stat limit (0 or 10)
   if (pet_info.weight <= 2) {
@@ -328,6 +337,9 @@ function demoLogWarning() {
 
 // 1.3 Log Error
 function demoLogError() { 
+
+  console.log("GigaPet [Error Demo] - Logging errors if Stat limits are reached and buttons are disabled...");
+
   // console.error() outputs an error message to the console at the "error" log level
   // In this case it simulates an error when trying to click a disabled button (stat limit reached)
   if (pet_info.weight === 0 && $('.play-button').prop('disabled')) {
@@ -349,6 +361,9 @@ function demoLogError() {
 
 // 1.4 Log Table 
 function demoLogTable() {
+  
+  console.log("GigaPet [Table Demo] - Displaying pet stats in a table format...");
+
   // console.table() displays tabular data as a table
   // In this case it shows the pet's stats in a clear table format for easy reading
   console.table(pet_info);
@@ -356,21 +371,28 @@ function demoLogTable() {
 
 // 1.5 Log Group 
 function demoLogGroup() {
+
+  console.log("GigaPet [Group Demo] - Grouping together all relevant Log Messages...");
+
   // console.group() creates a new inline group in the console log, allowing you to group related messages together
   // In this case it groups the Pet Info Table with any relevant warnings and errors
   console.group("GigaPet [Group] - Full Report");
     demoLogWarning();
     demoLogError();
+    demoLogCustom();
     demoLogTable();
   console.groupEnd();
 }
 
 // 1.6 Log Custom 
 function demoLogCustom() {
+
+  console.log("GigaPet [Custom Log Demo] - Logging a custom styled message when pet reaches max happiness...");
+
   // console.log() with CSS styling allows you to create custom styled log messages
   // In this case it creates a fun custom log message when the pet reaches max happiness
   if (pet_info.happiness === 10) {
-    console.log("%cGigaPet [Custom Log] - Your pet is at maximum happiness! Keep up the good work!", "color: Red; font-weight: bold;");
+    console.log("%cGigaPet [Custom Log] - Your pet is at maximum happiness! Keep up the good work!", "color: Red; font-size: 16px; font-weight: bold;");
   }
 }
 
@@ -378,9 +400,11 @@ function demoLogCustom() {
 
 // 2.1 Cause 404 Network Error 
 function demoCause404() {
+
+  console.log("GigaPet [Network Error Demo] - Attempting to load a non-existent image to trigger a 404 error (Network tab)...");
+
   // This function simulates a network error by trying to load a non-existent image
   // The browser will log a 404 error in the console (in the "Network" tab of DevTools)
-  console.log("GigaPet [Network Error Demo] - Attempting to load a non-existent image to trigger a 404 error (Network tab)...");
   var img = new Image();
   img.src = "assets/non_existent_image.png"; // This image does not exist (404 error)
   document.body.appendChild(img);
@@ -389,17 +413,20 @@ function demoCause404() {
 
 // 2.2 Cause TypeError
 function demoTypeError() {
+  console.log("GigaPet [TypeError Demo] - Attempting to call .toUpperCase() on undefined to trigger a TypeError...");
+
   // This function simulates a TypeError by trying to call a method on undefined 
   // The browser will log a TypeError in the console when this function is called
-  console.log("GigaPet [TypeError Demo] - Attempting to call .toUpperCase() on undefined to trigger a TypeError...");
   undefined.toUpperCase(); // This will cause a TypeError because undefinedVariable is not an object
 }
 
 // 2.3 Cause Violation 
 function demoViolation() {
+
+  console.log("GigaPet [Violation Demo] - Running a long loop to simulate a violation...");
+
   // This function simulates a violation by running a long loop on the main thread
-  // The browser will log a violation in the console (in the "Performance" tab of DevTools) if it takes too long
-  console.log("GigaPet [Performance Violation Demo] - Running a long loop to simulate a performance violation (Performance tab)...");
+  // The browser will log a violation in the console if it takes too long
   setTimeout(function() {
     // 200 ms loop to block the main thread and trigger a performance violation warning in DevTools
     var start = Date.now();
@@ -412,6 +439,9 @@ function demoViolation() {
 
 // 3 Filter Messages 
 function demoFilterMessages() {
+  
+  console.log("GigaPet [Filter Demo] - Populating console with different log levels...");
+
   // Log level - one message for each level filter 
   console.log("GigaPet [Filter Demo] Log - Pet Name: " + pet_info.name); 
   console.info("GigaPet [Filter Demo] Info - Pet Age: " + pet_info.age); 
