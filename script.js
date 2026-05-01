@@ -417,7 +417,7 @@ function demoTypeError() {
 
   // This function simulates a TypeError by trying to call a method on undefined 
   // The browser will log a TypeError in the console when this function is called
-  undefined.toUpperCase(); // This will cause a TypeError because undefinedVariable is not an object
+  undefined.toUpperCase(); // This will cause a TypeError because undefined is not an object
 }
 
 // 2.3 Cause Violation 
@@ -428,7 +428,7 @@ function demoViolation() {
   // This function simulates a violation by running a long loop on the main thread
   // The browser will log a violation in the console if it takes too long
   setTimeout(function() {
-    // 200 ms loop to block the main thread and trigger a performance violation warning in DevTools
+    // 200 ms loop to block the main thread and trigger a violation warning in DevTools
     var start = Date.now();
     while (Date.now() - start < 200) {
       // Busy wait for 200 ms
@@ -439,14 +439,19 @@ function demoViolation() {
 
 // 3 Filter Messages 
 function demoFilterMessages() {
+
+  console.clear(); // Clear console for a clean demo of filtering
   
   console.log("GigaPet [Filter Demo] - Populating console with different log levels...");
 
-  // Log level - one message for each level filter 
-  console.log("GigaPet [Filter Demo] Log - Pet Name: " + pet_info.name); 
-  console.info("GigaPet [Filter Demo] Info - Pet Age: " + pet_info.age); 
-  console.warn("GigaPet [Filter Demo] Warn - Pet Weight: " + pet_info.weight);
-  console.error("GigaPet [Filter Demo] Error - Pet Happiness: " + pet_info.happiness);
+  // Log level (user messages) - one message for each level filter 
+  console.log("GigaPet [Filter Demo] Log - Pet Name: " + pet_info.name); // Regular log message for pet name
+  console.info("GigaPet [Filter Demo] Info - Pet Age: " + pet_info.age); // Info level log message for pet age (undefined)
+  console.warn("GigaPet [Filter Demo] Warn - Pet Weight: " + pet_info.weight); // Warning level log message for pet weight
+  console.error("GigaPet [Filter Demo] Error - Pet Happiness: " + pet_info.happiness); // Error level log message for pet happiness
+  console.debug("GigaPet [Filter Demo] Verbose - Pet Style: " + pet_info.style); // Verbose level log message for pet style (verbose filter must be enabled - it isn't by default filters)
+
+  fetch('https://example.com'); // Browser log (will not show up under user messages filter)
 
   console.log("GigaPet [Filter Demo] - Use the filter options in DevTools to show/hide specific log levels and test filtering! (Follow Filter Guide in DevTools Demo Panel if needed)");
 }
