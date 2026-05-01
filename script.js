@@ -478,7 +478,7 @@ function demoReproduceBug() {
     console.warn("Result of Bugged Addition:", result, "( Expected:", currentHappiness + 3, ") - Concatenation occurred instead of addition!");
   console.groupEnd();
  
-  document.getElementById("bug-result").textContent =
+  document.getElementById("bug-result").innerHTML =
     "Bug result: " + currentHappiness + " + '3' = \"" + result + "\"  (should be " + (currentHappiness + 3) + ")";
 }
 

@@ -195,10 +195,26 @@
         <p class="devtools-note">
           Open the <code>Sources</code> panel. <br><br>
           
-          The <code>Sources</code> panel is divided into three main sections: 
-            the Page tab with the file tree on the left, 
-            the Code Editor on the right (or middle), 
-            and the Debugger below the other two (or to the rightmost of them). <br>  <br>
+          The <code>Sources</code> panel is divided into three main sections:
+        </p> 
+
+        <ul class="sources-guide">
+          <li> 
+            <strong>Page tab:</strong> with the file tree on the left 
+          </li>
+
+          <li> 
+            <strong>Code Editor:</strong> on the right (or middle) 
+          </li>
+
+          <li> 
+              <strong>Debugger:</strong> below the other two (or to the rightmost of them), 
+              where you can find the 
+              <strong>Breakpoints</strong>, <strong>Scope</strong> and <strong>Watch</strong> sections. 
+            </li>
+        </ul>
+
+        <p class="devtools-note">
 
           Check the <code>Event Listener Breakpoints > Mouse > click</code> to pause execution when a click event is triggered. (Click on any button) <br><br>
 
@@ -214,9 +230,12 @@
           While Paused, check the <code>Scope</code> section in the Debugger to inspect variables and their values at that moment in time. <br><br>
           
           Change to the <code>Watch</code> section and try adding <code>pet_info</code> to watch the pet's stats! 
-          (You can click on action buttons when it's no longer paused to change the pet's stats and refresh the Watch panel to see the updated stats) <br><br>
+          (You can click on action buttons when it's no longer paused to change the pet's stats and refresh the Watch panel to see the updated stats.) <br><br>
 
-          Change back to the <code>Console</code> section to check the console log while paused.
+          Change back to the <code>Console</code> section to check the console log while paused. <br><br>
+          
+          The Pause on Breakpoint button will log a snapshot of pet_info and lastAction variables in the console to check their values at that moment in time 
+          but you can also enter a variable name directly in the console to check its value.
         </p>
       </div>
 
