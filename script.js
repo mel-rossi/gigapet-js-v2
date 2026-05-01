@@ -454,8 +454,20 @@ function demoReproduceBug() {
     "Bug result: " + currentHappiness + " + '3' = \"" + result + "\"  (should be " + (currentHappiness + 3) + ")";
 }
 
-// 7 Set a line-of-code Breakpoint
+// 7 Breakpoints & 8 Check Variables
 function demoBreakpoint() {
+  // 8.3 Check Variable Values in The Console
+  var snapshot = {
+    name: pet_info.name,
+    weight: pet_info.weight,
+    happiness: pet_info.happiness,
+    style: pet_info.style,
+    lastAction: lastAction
+  };
+
+  console.log("GigaPet [Variable Check Demo] - Variable Values at Breakpoint:", snapshot);
+
+  // 7 Set a line-of-code Breakpoint
   console.log("GigaPet [Breakpoint Demo] - Pausing code execution with a breakpoint.");
 
   debugger; // This will pause execution in DevTools
