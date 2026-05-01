@@ -474,3 +474,19 @@ function demoBreakpoint() {
 }
 
 // 9 Apply a Fix
+function demoApplyFix() {
+  // Simulate applying a fix by replacing the buggy addition function with the fixed version and then re-running the addition
+  var currentHappiness = pet_info.happiness;
+  var addedAmount = "3"; // Still using a string to show that the fix handles it correctly
+
+  var result = fixedAddition(currentHappiness, addedAmount);
+
+  console.group("GigaPet [Apply Fix] — Fixed Addition with parseInt");
+    console.log("currentHappiness (number):", currentHappiness);
+    console.log("addedAmount (string):", addedAmount);
+    console.info("Result of Fixed Addition:", result, "( Expected:", currentHappiness + 3, ") - Fix applied successfully!");
+  console.groupEnd();
+
+  document.getElementById("bug-result").innerHTML =
+    "Fixed Result: parseInt(" + currentHappiness + ") + parseInt('3') = " + result;
+}
