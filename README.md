@@ -1,4 +1,4 @@
-# gigapet-js 
+# gigapet-js-v2 
 
 COMP 484 - HW 10: GigaPet JavaScript V 2.0 (Chrome DevTools Implementation)
 
