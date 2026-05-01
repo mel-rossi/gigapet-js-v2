@@ -1,10 +1,10 @@
 # gigapet-js 
 
-COMP 484 - HW 10: GigaPet JavaScript - Chrome DevTools Implementation 
+COMP 484 - HW 10: GigaPet JavaScript V 2.0 (Chrome DevTools Implementation)
 
 [Starter Code Template](https://mel-rossi.github.io/gigapet-js/)
 
-[Implementations & Screenshots - PDF](assets/)
+[Implementations & Screenshots - PDF](assets/DevTools%20Implementation.pdf)
 
 [GitHub Pages Link](https://mel-rossi.github.io/gigapet-js-v2/)
 
