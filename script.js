@@ -457,18 +457,11 @@ function demoFilterMessages() {
 }
 
 // 4 Reproduce a Bug
-var useFixedVersion = false; 
 
 // Bug Helper function
 function buggedAddition(a, b) {
   // Add happiness using string concatenation instead of numeric addition to simulate a common JavaScript bug
   return a + b; // # + "#" = ## instead of addition of # + #
-}
-
-// Fixed Helper function 
-function fixedAddition(a, b) { 
-  // Correctly add happiness using numeric addition
-  return parseInt(a) + parseInt(b); // Convert inputs to integers before adding to ensure correct addition
 }
 
 // Bug Reproduction Function
@@ -509,6 +502,14 @@ function demoBreakpoint() {
 }
 
 // 9 Apply a Fix
+
+// Fixed Helper function 
+function fixedAddition(a, b) { 
+  // Correctly add happiness using numeric addition
+  return parseInt(a) + parseInt(b); // Convert inputs to integers before adding to ensure correct addition
+}
+
+// Apply Fix Function
 function demoApplyFix() {
   // Simulate applying a fix by replacing the buggy addition function with the fixed version and then re-running the addition
   var currentHappiness = pet_info.happiness;
