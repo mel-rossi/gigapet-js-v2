@@ -454,6 +454,11 @@ function demoReproduceBug() {
     "Bug result: " + currentHappiness + " + '3' = \"" + result + "\"  (should be " + (currentHappiness + 3) + ")";
 }
 
-// 5 Get Familiar with the Sources UI
+// 6 Pause the code with a breakpoint 
+function demoBreakpoint() {
+  console.log("GigaPet [Breakpoint Demo] - Pausing code execution with a breakpoint.");
+
+  debugger; // This will pause execution in DevTools
+}
 
 // 9 Apply a Fix
